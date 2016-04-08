@@ -1,3 +1,2 @@
-web:        bundle exec puma -C config/puma.rb
-redis:      redis-server /usr/local/etc/redis.conf
+redis:      sudo service redis-server start
 sidekiq:    bundle exec sidekiq -C config/sidkiq.yml
