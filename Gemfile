@@ -19,6 +19,12 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'devise', '~> 3.5', '>= 3.5.6'
 # Great Ruby dubugging companion: pretty print Ruby objects to visualize their structure. Supports custom object formatting via plugins
 gem 'awesome_print', '~> 1.6', '>= 1.6.1'
+#Simple, efficient background processing for Ruby.
+gem 'sidekiq'
+#Send Devise's emails in background. Supports Backburner, Resque, Sidekiq
+gem 'devise-async', '~> 0.10.1'
+#puma is the multithread webserver on heroku
+gem 'puma'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
