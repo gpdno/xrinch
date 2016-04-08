@@ -20,9 +20,9 @@ gem 'devise', '~> 3.5', '>= 3.5.6'
 # Great Ruby dubugging companion: pretty print Ruby objects to visualize their structure. Supports custom object formatting via plugins
 gem 'awesome_print', '~> 1.6', '>= 1.6.1'
 #Simple, efficient background processing for Ruby.
-gem 'sidekiq'
+#gem 'sidekiq'
 #Send Devise's emails in background. Supports Backburner, Resque, Sidekiq
-gem 'devise-async', '~> 0.10.1'
+#gem 'devise-async', '~> 0.10.1'
 #puma is the multithread webserver on heroku
 #gem 'puma'
 # Use jquery as the JavaScript library
