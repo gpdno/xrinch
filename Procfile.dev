@@ -1,2 +1,0 @@
-redis:      sudo service redis-server start
-sidekiq:    bundle exec sidekiq -C config/sidkiq.yml
