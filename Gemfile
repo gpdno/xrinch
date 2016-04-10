@@ -16,8 +16,11 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+#Font Awesome, SASS version, with assets pipeline, for Rails 3.1+
+gem 'font-awesome-sass', '~> 4.5.0'
 # Devise gem for login control
 gem 'devise', '~> 3.5', '>= 3.5.6'
+gem 'devise-bootstrap-views'
 # Great Ruby dubugging companion: pretty print Ruby objects to visualize their structure. Supports custom object formatting via plugins
 gem 'awesome_print', '~> 1.6', '>= 1.6.1'
 #Simple, efficient background processing for Ruby.

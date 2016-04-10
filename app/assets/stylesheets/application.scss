@@ -11,5 +11,12 @@
  * file per style scope.
  *
  */
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "devise_bootstrap_views";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "colorbox";
+@import "responsive";
+@import "style";
