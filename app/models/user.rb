@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   after_create :create_account
          
   def confirmation_required?
-    true #false to remove need of comformation email if needed
+    false # to remove need of comformation email if needed, change to true for conformation
   end
   
   private
