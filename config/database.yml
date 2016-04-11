@@ -10,12 +10,12 @@ default: &default
 
 development:
   <<: *default
-  database: saas-guide-db_development
+  database: rinch-db_development
 
 test:
   <<: *default
-  database: saas-guide-db_test
+  database: rinch-db_test
 
 production:
   <<: *default
-  database: saas-guide-db_production
+  database: rinch-db_production
