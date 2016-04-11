@@ -9,8 +9,16 @@
 </head>
 <body>
     <%= render 'shared/navigation' %>
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+        <div id="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="notice"><%= notice %></p>
+                        <p class="alert"><%= alert %></p>
+                    </div>
+                </div>
+            </div>
+        </div>
 <%= yield %>
     <%= render 'shared/footer' %>
 </body>

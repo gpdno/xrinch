@@ -1,0 +1,16 @@
+<div class="col-md-3 col-sm-4 col-xs-12">
+    <div class="post-container">
+      <div class="post-content">
+        <div class="profile-account">
+          <%= gravatar_tag @user.email, class: "img-responsive img-thumbnail" %>
+          <h3><%= @account.first_name %> <%= @account.last_name %></h3>
+          <p><strong>Sign up :</strong></p>
+          <p><%= time_ago_in_words(@account.created_at) %> ago</p>
+          <p><strong>Location : </strong></p>
+          <p><%= @account.location %></p>
+          <p><strong>Website : </strong></p>
+          <p><%= link_to @account.website, "http://#{@account.website}", :target => "_blank" %></p>
+        </div>
+      </div>
+    </div>
+</div>

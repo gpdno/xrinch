@@ -79,5 +79,5 @@ Rails.application.configure do
   
   #Sendgrid config code
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { :host => 'nickcool-saas-guide.herokuapp.com/', :protocol => 'https' }
+  config.action_mailer.default_url_options = { :host => 'rinch.herokuapp.com/', :protocol => 'https' }
 end
