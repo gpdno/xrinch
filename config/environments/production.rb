@@ -10,6 +10,10 @@ Rails.application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
+  #Sendgrid config code
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { :host => 'rinch.herokuapp.com', :protocol => 'https' }
+  
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
@@ -77,7 +81,5 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   
-  #Sendgrid config code
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { :host => 'rinch.herokuapp.com/', :protocol => 'https' }
+  
 end
