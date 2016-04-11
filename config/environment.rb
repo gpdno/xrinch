@@ -5,6 +5,7 @@ require File.expand_path('../application', __FILE__)
 Rails.application.initialize!
 
 if Rails.env.development?
+    ActionMailer::Base.delivery_method = :smtp #added to try and fix error
     ActionMailer::Base.smtp_settings = {
     
         :address => 'smtp.gmail.com',
@@ -18,7 +19,7 @@ if Rails.env.development?
     }
     
 else
-    
+    ActionMailer::Base.delivery_method = :smtp #added to try and fix error
     ActionMailer::Base.smtp_settings = {
     
         :address => 'smtp.sendgrid.net',
