@@ -25,11 +25,13 @@ gem 'devise-bootstrap-views'
 gem 'awesome_print', '~> 1.6', '>= 1.6.1'
 #Hassle-free construction of those pesky gravatar.com urls, with out-of-the-box support for Rails 3
 gem 'gravatarify', '~> 3.0.0'
-#Simple, efficient background processing for Ruby.
+# This gem allows simple integration between ActionMailer and SendGrid
+gem 'sendgrid', '~> 1.2', '>= 1.2.4'
+# Simple, efficient background processing for Ruby.
 #gem 'sidekiq'
-#Send Devise's emails in background. Supports Backburner, Resque, Sidekiq
+# Send Devise's emails in background. Supports Backburner, Resque, Sidekiq
 #gem 'devise-async', '~> 0.10.1'
-#puma is the multithread webserver on heroku
+# puma is the multithread webserver on heroku
 #gem 'puma'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -41,7 +43,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
