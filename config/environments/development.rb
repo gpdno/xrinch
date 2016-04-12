@@ -41,5 +41,5 @@ Rails.application.configure do
   
   config.action_mailer.delivery_method = :test
   #config.action_mailer.default_url_options = { host: $IP, port: $PORT }
-  config.action_mailer.default_url_options = { :host => 'https://rinch-gpdno.c9users.io/'}
+  config.action_mailer.default_url_options = { :host => 'https://xrinch-gpdno.c9users.io/'}
 end

@@ -10,12 +10,12 @@ default: &default
 
 development:
   <<: *default
-  database: rinch-db_development
+  database: xrinch-db_development
 
 test:
   <<: *default
-  database: rinch-db_test
+  database: xrinch-db_test
 
 production:
   <<: *default
-  database: rinch-db_production
+  database: xrinch-db_production

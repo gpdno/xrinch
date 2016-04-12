@@ -19,7 +19,7 @@ if Rails.env.development?
     }
     
 else
-    ActionMailer::Base.delivery_method = :smtp #added to try and fix error
+    
     ActionMailer::Base.smtp_settings = {
     
         :address => 'smtp.sendgrid.net',
