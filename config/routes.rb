@@ -5,11 +5,12 @@ Rails.application.routes.draw do
   root to: 'home#index'
   
   get 'about', to: 'home#about'
+  get 'profile', to: 'home#profile'
   
   resources :details
   resources :accounts
   
-  get 'settings/:id', to: 'accounts#settings'
+  #get 'settings/:id', to: 'accounts#settings'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

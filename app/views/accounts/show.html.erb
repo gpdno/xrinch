@@ -3,7 +3,7 @@
       <div class="container">
         <div class="row">
           
-          <%= render 'profile' %>
+          <%= render 'shared/profile_bar' %>
           <!-- break -->
           <div class="col-md-9 col-sm-8 col-xs-12">
             <div class="post-container">
@@ -11,7 +11,9 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="heading-title">
-                      <h2>About <%= @account.first_name %> <%= @account.last_name %></h2>
+                      <h3>About</h3>
+                      <hr>
+                      <h2><%= @account.first_name %> <%= @account.last_name %></h2>
                     </div>
                     <p><%= @account.description %></p>
                   </div>
@@ -21,7 +23,7 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="heading-title">
-                      <h2><%= @account.first_name %> <%= @account.last_name %> Portfolio</h2>
+                      <h2>Portfolio</h2>
                     </div>
                   </div>
                 </div>

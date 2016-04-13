@@ -1364,6 +1364,20 @@ h1,h2,h3,h4,h5,h6{
 	[10. SIGNIN/SIGNUP]
 	============================
 */
+#centerbuttons {
+	width:250px;
+	margin:0 auto;}
+
+.form-title {
+	text-align: center;
+	align-items: center;
+}
+
+.form-custom {
+	padding-bottom: 15px;
+	text-align: right;
+}
+
 .form-signin .input-group{
 	margin-bottom: 10px;
 }
@@ -1886,4 +1900,25 @@ h1,h2,h3,h4,h5,h6{
 		-ms-transition: all 0.3s ease-in-out;
 		 -o-transition: all 0.3s ease-in-out;
 			transition: all 0.3s ease-in-out;
+}
+
+table {
+    width: 100%;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2
+	
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    border-bottom: 1px solid #ddd;
 }

@@ -12,4 +12,10 @@ class HomeController < ApplicationController
         end
     end
     
+    def profile
+        if current_user
+            @account = Account.find(current_user)
+        end
+    end
+    
 end
