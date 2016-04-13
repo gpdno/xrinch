@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   
   resources :details
   resources :accounts
+  resources :portfolios
   
   #get 'settings/:id', to: 'accounts#settings'
   # The priority is based upon order of creation: first created -> highest priority.
