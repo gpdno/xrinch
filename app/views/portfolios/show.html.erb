@@ -4,66 +4,13 @@
         <div class="row">
           <!-- begin:sidebar -->
           <div class="col-md-3 col-md-push-9 col-sm-4 col-sm-push-8 col-xs-12">
-            <!-- begin:detail-option -->
-            <div class="row">
-              <div class="col-md-12">
-                <div class="post-container">
-                  <div class="post-content">
-                    <div class="detail-option">
-                      <ul class="list-options">
-                        <li><a href="#"><i class="fa fa-share-alt"></i> <span>Share</span></a></li>
-                        <li><a href="#"><i class="fa fa-comment"></i> <span>Comment</span></a></li>
-                        <li><a href="#"><i class="fa fa-heart"></i> <span>Love</span></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end:detail-option -->
+            
+            <%= render 'details' %>
+            
+            <%= render 'recent' %>
+            
+            <%= render 'tags' %>
 
-            <!-- begin:recent-images -->
-            <div class="row">
-              <div class="col-md-12">
-                <div class="post-container">
-                  <div class="post-content">
-                    <div class="widget-title">
-                      <h3>Recent Images</h3>
-                    </div>
-                    <div class="detail-similiar">
-                      <ul class="list-similiars">
-                        <li><a href=""><img src="https://s3.amazonaws.com/rinch/images/sample4.png" class="img-responsive"></a></li>
-                        <li><a href=""><img src="https://s3.amazonaws.com/rinch/images/sample5.jpg" class="img-responsive"></a></li>
-                        <li><a href=""><img src="https://s3.amazonaws.com/rinch/images/sample4.png" class="img-responsive"></a></li>
-                      </ul>
-                    </div>
-                    <hr>
-                    <img src="https://s3.amazonaws.com/rinch/images/man1.jpg" class="img-responsive img-avatar"> See all projects by <a href="#">Greg</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end:recent-images -->
-
-            <!-- begin:tags -->
-            <div class="row">
-              <div class="col-md-12">
-                <div class="post-container">
-                  <div class="post-content">
-                    <div class="widget-title">
-                      <h3>Tags</h3>
-                    </div>
-                    <ul class="tags">
-                      <li><a href="#">CAD</a></li>
-                      <li><a href="#">Assembly</a></li>
-                      <li><a href="#">Drawings</a></li>
-                      <li><a href="#">Rendering</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end:tags -->
           </div>
           <!-- end:sidebar -->
 
@@ -77,13 +24,15 @@
                     <div class="row">
                       <div class="col-md-12">
                         <div class="detail-meta">
-                          <span><em>in</em> <a href="#">Projects</a></span>
-                          <span><em>by</em> <a href="#">Greg</a></span>
-                          <span><em>April 10, 2016</em></span>
+                          <span><em>in</em> <%= @portfolio.name %></span>
+                          <span><em>by</em> <%= @portfolio.account.first_name %></span>
+                          <span><em><%= @portfolio.created_at.strftime("%d %b. %Y") %></span>
                           <span><a href="#">3 comments</a></span>
                         </div>
                         <div class="detail-heading-title">
-                          <h2>Lorem ipsum dolor sit amet.</h2>
+                          <% @images.each do |image| %>
+                            <h2><%= image.name %></h2>
+                          <% end %>
                         </div>
 
                         <img src="https://s3.amazonaws.com/rinch/images/sample1.png" class="img-responsive" alt="detail fransisca gallery">
