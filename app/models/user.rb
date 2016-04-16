@@ -6,6 +6,10 @@ class User < ActiveRecord::Base
          
   validate :email_is_unique, on: :create
   after_create :create_account
+  has_one :account
+  has_many :portfolios
+  has_many :images
+  has_many :blogs
          
   def confirmation_required?
     true # false to remove need of comformation email if needed

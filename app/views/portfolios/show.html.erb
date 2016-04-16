@@ -32,11 +32,10 @@
                         <div class="detail-heading-title">
                           <% @images.each do |image| %>
                             <h2><%= image.name %></h2>
+                            <%= image_tag(image.picture.url, size: "500x400") if @image.picture? %>
+                            <br>
                           <% end %>
                         </div>
-
-                        <img src="https://s3.amazonaws.com/rinch/images/sample1.png" class="img-responsive" alt="detail fransisca gallery">
-                        <br>
                         <div class="detail-meta">
                           <span><em>Tags : </em> <a href="#">Drawing</a>, <a href="#">CAD</a>, <a href="#">Assembly</a></span>
                         </div>
@@ -57,12 +56,7 @@
                       <h3>Description</h3>
                     </div>
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p><%= @portfolio.description %></p>
                   </div>
                 </div>
               </div>

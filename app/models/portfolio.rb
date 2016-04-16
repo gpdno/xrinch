@@ -1,5 +1,5 @@
 class Portfolio < ActiveRecord::Base
-    belongs_to :account
+    belongs_to :user
     has_many :images
     
     validates :name, presence: true, length: {minimum: 3, maximum: 150}

@@ -1,4 +1,4 @@
 class Account < ActiveRecord::Base
-    has_many :portfolios
+    belongs_to :user
     
 end

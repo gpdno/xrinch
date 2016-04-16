@@ -28,6 +28,7 @@ gem 'font-awesome-sass', '~> 4.5.0'
 # Devise gem for login control
 gem 'devise', '~> 3.5', '>= 3.5.6'
 gem 'devise-bootstrap-views'
+gem 'simple_form', '~> 3.2', '>= 3.2.1'
 # Great Ruby dubugging companion: pretty print Ruby objects to visualize their structure. Supports custom object formatting via plugins
 gem 'awesome_print', '~> 1.6', '>= 1.6.1'
 #Hassle-free construction of those pesky gravatar.com urls, with out-of-the-box support for Rails 3

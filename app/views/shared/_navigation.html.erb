@@ -19,6 +19,7 @@
         <li><%= link_to 'Home', root_path %></li>
         <li><%= link_to 'About this site', about_path %></li>
         <li><%= link_to 'Members list', accounts_path %></li>
+        <li><%= link_to 'Blog', blogs_path %></li>
         <li class="fsearch hidden-xs"><a class="btn-search"></a></li>
         <% if current_user %>
         <li class="dropdown">
@@ -28,8 +29,8 @@
             <li><%= link_to 'Home', root_path %></li>
             <li><%= link_to 'About this site', about_path %></li>
             <li><%= link_to 'My Profile', account_path(current_user) %></a></li>
-            <li><a href="">Portfolio</a></li>
-            <li><a href="">Blog</a></li>
+            <li><a href="">My Portfolio</a></li>
+            <li><%= link_to 'My Blogs', blogs_path %></li>
             <li class="divider"></li>
             <li><%= link_to '<i class="fa fa-cogs"></i> Account Setting'.html_safe, edit_account_path(current_user) %></a></li>
             <li><%= link_to '<i class="fa fa-power-off"></i> Logout'.html_safe, destroy_user_session_path, method: :delete %> </li>
