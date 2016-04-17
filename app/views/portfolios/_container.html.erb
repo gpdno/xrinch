@@ -1,0 +1,32 @@
+<% @portfolios.each do |portfolio| %>
+<div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="post-container">
+      <div class="post-option">
+        <ul class="list-options">
+          <li><a><%= link_to '<i class="fa fa-plus"></i><p>Details</p>'.html_safe, details_path %></a></li>
+          <li><a><%= link_to '<i class="fa fa-comment"></i><p>Comments</p>'.html_safe, "" %></a></li>
+          <li><a><%= link_to '<i class="fa fa-heart"></i><p>Love</p>'.html_safe, "" %></a></li>
+        </ul>
+      </div>
+      <div class="post-image">
+        <a href="https://s3.amazonaws.com/rinch/images/sample1.png" class="img-group-gallery">
+          <img src="https://s3.amazonaws.com/rinch/images/sample1.png" 
+        class="img-responsive" alt="fransisca gallery"></a>
+      </div>
+      <div class="post-meta">
+        <p class="blog-post-meta"><small><%= portfolio.created_at.strftime("%a %b %d, %Y") %></small>
+            by <%= portfolio.user.account.first_name %></p>
+        <ul class="list-meta list-inline">
+          <li><i class="fa fa-eye"></i> 117</li>
+          <li><i class="fa fa-comment"></i> 7</li>
+          <li><i class="fa fa-heart"></i> 9</li>
+        </ul>
+      </div>
+      <div class="post-desc">
+        <p><strong><%= portfolio.name %></strong></p>
+        <p><%= truncate(simple_format(portfolio.description), escape: false, length: 50) %></p>
+        <i class="fa fa-tags"></i> Tags : <a href="#">Drawing</a>, <a href="#">CAD</a>, <a href="#">Assembly</a>
+      </div>
+    </div>
+</div>
+<% end %>

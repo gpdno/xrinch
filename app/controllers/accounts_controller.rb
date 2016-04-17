@@ -8,6 +8,7 @@ class AccountsController < ApplicationController
     def show
         @account = Account.find(params[:id])
         @user = User.find(params[:id])
+        @portfolios = Portfolio.includes(:user).where(user_id: params[:id])
     end
     
     def edit

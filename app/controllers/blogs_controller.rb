@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
     
     def index
         @blogs = Blog.all
-        @account = Account.all
+        @accounts = Account.all
     end
     
     def new
