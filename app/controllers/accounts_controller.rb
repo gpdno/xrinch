@@ -2,6 +2,7 @@ class AccountsController < ApplicationController
 
     def index
         @accounts = Account.all
+        @users = User.all
     end
     
     def show
@@ -17,10 +18,11 @@ class AccountsController < ApplicationController
     def update
         @account = Account.find(params[:id])
         if @account.update_attributes(account_params)
-            flash[:success] = "Profile updated"
-            redirect_to account_path(current_user)
+            flash[:success] = "Successfully updated"    # Optional
+            redirect_to account_path
         else
-            render 'edit'
+            flash[:error] = "Error"       # Optional
+            render :edit
         end
     end
 

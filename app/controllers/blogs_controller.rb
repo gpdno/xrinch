@@ -4,15 +4,19 @@ class BlogsController < ApplicationController
     
     def index
         @blogs = Blog.all
+        @account = Account.all
     end
     
     def new
-       @blog = Blog.new 
+       @blog = Blog.new
+       @user = current_user
+       @account = current_user.account
     end
     
     def create
         @blog = Blog.new(blog_params)
         @blog.user = current_user
+        @account = current_user.account
         if @blog.save
             redirect_to blogs_path 
         else

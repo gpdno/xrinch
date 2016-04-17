@@ -4,6 +4,7 @@ class CreateImages < ActiveRecord::Migration
       t.string :name
       t.string :picture
       t.references :user, index: true, foreign_key: true
+      t.references :account, index: true, foreign_key: true
       t.references :portfolio, index: true, foreign_key: true
 
       t.timestamps null: false

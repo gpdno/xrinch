@@ -18,7 +18,7 @@
               <tr>
                 <td><%= account.first_name %></td>
                 <td><%= account.last_name %></td>
-                <td><%= account.email %></td>
+                <td><%= account.user.email %></td>
                 <td><%= link_to 'Profile', account_path(account) %></td>
               </tr>
               <% end %>
