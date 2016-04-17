@@ -9,7 +9,9 @@ class PortfoliosController < ApplicationController
     
     def user_index
         @portfolios = Portfolio.includes(:user).where(user: params[:id])
-        @portfolio = Portfolio.find(params[:id])
+        if @portfolio = Portfolio.where(:user_id => current_user.id).any?
+            @portfolio = Portfolio.find(params[:id])
+        end
         @account = Account.find(params[:id])
         @user = User.find(params[:id])
     end
@@ -63,7 +65,7 @@ class PortfoliosController < ApplicationController
         end
         
         def find_portfolio
-            @portfolio = Portfolio.find(params[:id]) 
+                @portfolio = Portfolio.find(params[:id])
         end
         
 end

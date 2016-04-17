@@ -8,8 +8,8 @@ class BlogsController < ApplicationController
     end
     
     def user_index
-        @blogs = Blog.includes(:user).where(user: params[:id])
         @blog = Blog.find(params[:id])
+        @blogs = Blog.includes(:user).where(user: params[:id])
         @account = Account.find(params[:id])
         @user = User.find(params[:id])
     end
