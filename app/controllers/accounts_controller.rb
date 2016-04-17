@@ -3,6 +3,7 @@ class AccountsController < ApplicationController
     def index
         @accounts = Account.all
         @users = User.all
+        @blogs = Blog.all
     end
     
     def show

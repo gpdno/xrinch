@@ -13,5 +13,8 @@ Rails.application.routes.draw do
   resources :portfolios
   resources :blogs
   
+  get 'userblog/:id' => 'blogs#user_index', as: 'userblog'
+  
+  get 'userportfolio/:id' => 'portfolios#user_index', as: 'userportfolio'
 
 end

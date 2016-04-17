@@ -1,7 +1,7 @@
 <div id="content">
   <div class="container">
     <div class="row container-gallery">
-      <div class="col col-md-9">
+      <div class="col col-md-12">
         <div class="post-container">
           <div class="post-desc">
             <h2>Find Your Favorite designers and portfolios in xRinch.</h2>
@@ -13,6 +13,8 @@
                 <th>Last Name</th>
                 <th>email</th>
                 <th>Profile Page</th>
+                <th>Blog Page</th>
+                <th>Portfolio Page</th>
               </tr>
               <% @accounts.each do |account| %>
               <tr>
@@ -20,6 +22,8 @@
                 <td><%= account.last_name %></td>
                 <td><%= account.user.email %></td>
                 <td><%= link_to 'Profile', account_path(account) %></td>
+                <td><%= link_to 'Blog', "" %></td>
+                <td><%= link_to 'Portfolio', "" %></td>
               </tr>
               <% end %>
             </table>
