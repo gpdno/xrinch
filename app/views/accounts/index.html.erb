@@ -22,8 +22,8 @@
                 <td><%= account.last_name %></td>
                 <td><%= account.user.email %></td>
                 <td><%= link_to 'Profile', account_path(account) %></td>
-                <td><%= link_to 'Blog', "" %></td>
-                <td><%= link_to 'Portfolio', "" %></td>
+                <td><%= link_to 'Blog', userblog_path(account) %></td>
+                <td><%= link_to 'Portfolio', userportfolio_path(account) %></td>
               </tr>
               <% end %>
             </table>
