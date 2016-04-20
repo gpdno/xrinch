@@ -4,26 +4,21 @@ class BlogsController < ApplicationController
     
     def index
         @blogs = Blog.all
-        @accounts = Account.all
+        @users = User.all
     end
     
     def user_index
         @blog = Blog.find(params[:id])
-        @blogs = Blog.includes(:user).where(user: params[:id])
-        @account = Account.find(params[:id])
-        @user = User.find(params[:id])
+        @blogs = Blog.includes(:user).where(id: params[:id])
+        @user = current_user
     end
     
     def new
-       @blog = Blog.new
-       @user = current_user
-       @account = current_user.account
+        @blog = Blog.new
     end
     
     def create
-        @blog = Blog.new(blog_params)
-        @blog.user = current_user
-        @account = current_user.account
+        @blog = current_user.blogs.build(blog_params)
         if @blog.save
             redirect_to blogs_path 
         else
@@ -50,13 +45,14 @@ class BlogsController < ApplicationController
     
     def destroy
         @blog.destroy
-        redirect_to root_path
+        redirect_to blogs_path
     end
     
     private
     
         def blog_params
             params.require(:blog).permit(:title, :description)
+            #params.require(:blog).permit(:title, :description)
         end
         
         def find_blog

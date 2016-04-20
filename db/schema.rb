@@ -28,45 +28,30 @@ ActiveRecord::Schema.define(version: 20160415170701) do
     t.datetime "updated_at",  null: false
   end
 
-  add_index "accounts", ["user_id"], name: "index_accounts_on_user_id", using: :btree
-
   create_table "blogs", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
     t.integer  "user_id"
-    t.integer  "account_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
-
-  add_index "blogs", ["account_id"], name: "index_blogs_on_account_id", using: :btree
-  add_index "blogs", ["user_id"], name: "index_blogs_on_user_id", using: :btree
 
   create_table "images", force: :cascade do |t|
     t.string   "name"
     t.string   "picture"
     t.integer  "user_id"
-    t.integer  "account_id"
     t.integer  "portfolio_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
 
-  add_index "images", ["account_id"], name: "index_images_on_account_id", using: :btree
-  add_index "images", ["portfolio_id"], name: "index_images_on_portfolio_id", using: :btree
-  add_index "images", ["user_id"], name: "index_images_on_user_id", using: :btree
-
   create_table "portfolios", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.integer  "user_id"
-    t.integer  "account_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
-
-  add_index "portfolios", ["account_id"], name: "index_portfolios_on_account_id", using: :btree
-  add_index "portfolios", ["user_id"], name: "index_portfolios_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -91,12 +76,4 @@ ActiveRecord::Schema.define(version: 20160415170701) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "accounts", "users"
-  add_foreign_key "blogs", "accounts"
-  add_foreign_key "blogs", "users"
-  add_foreign_key "images", "accounts"
-  add_foreign_key "images", "portfolios"
-  add_foreign_key "images", "users"
-  add_foreign_key "portfolios", "accounts"
-  add_foreign_key "portfolios", "users"
 end

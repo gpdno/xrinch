@@ -25,14 +25,16 @@
                       <div class="col-md-12">
                         <div class="detail-meta">
                           <span><em>in</em> <%= @portfolio.name %></span>
-                          <span><em>by</em> <%= @portfolio.account.first_name %></span>
+                          <span><em>by</em> <%= @portfolio.user.account.first_name %></span>
                           <span><em><%= @portfolio.created_at.strftime("%d %b. %Y") %></span>
                           <span><a href="#">3 comments</a></span>
                         </div>
                         <div class="detail-heading-title">
+                          <img src="https://s3.amazonaws.com/rinch/images/sample1.png" size: "500x400"><%#) if @image.picture? %>
                           <% @images.each do |image| %>
                             <h2><%= image.name %></h2>
-                            <%= image_tag(image.picture.url, size: "500x400") if @image.picture? %>
+                            <img src="https://s3.amazonaws.com/rinch/images/man1.jpg" alt="Gregory DeNinno img">
+                            <img src="https://s3.amazonaws.com/rinch/images/sample1.png" size: "500x400"><%#) if @image.picture? %>
                             <br>
                           <% end %>
                         </div>

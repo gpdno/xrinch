@@ -7,7 +7,7 @@ class CreateAccounts < ActiveRecord::Migration
       t.string :location
       t.string :website
       t.text :description
-      t.references :user, index: true, foreign_key: true
+      t.integer :user_id
       
       t.timestamps null: false
     end

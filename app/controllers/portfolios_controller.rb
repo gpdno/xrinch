@@ -18,7 +18,11 @@ class PortfoliosController < ApplicationController
     
     def show
         @images = Image.includes(:portfolio).where(portfolio_id: params[:id])
-        @image = Image.find(params[:id])
+        if @image = Image.where(:user_id => current_user.id).any?
+            @image = Image.find(params[:id])
+        end
+        @account = Account.find(params[:id])
+        @user = User.find(params[:id])
     end
     
     def new

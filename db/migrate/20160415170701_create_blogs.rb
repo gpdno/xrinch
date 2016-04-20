@@ -3,8 +3,7 @@ class CreateBlogs < ActiveRecord::Migration
     create_table :blogs do |t|
       t.string :title
       t.text :description
-      t.references :user, index: true, foreign_key: true
-      t.references :account, index: true, foreign_key: true
+      t.integer :user_id
 
       t.timestamps null: false
     end

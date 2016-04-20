@@ -1,4 +1,5 @@
 class Image < ActiveRecord::Base
+  belongs_to :account
   belongs_to :user
   belongs_to :portfolio
 
