@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="panel-body">
+        <% if current_user %>
+            <%= link_to '+ Portfolio', new_portfolio_path, class: "btn btn-primary" %>
+        <% end %>
+    </div>
+
+    
+    <div class="panel panel-default">
+    <!-- Default panel contents -->
+        <div class="panel-heading">Current Portfolio</div>
+        
+        <!-- Table -->
+        <table class="table">
+            <tr>
+                <td>Title</td>
+                <td>Description</td> 
+                <td>Options</td>
+            </tr>
+            <% @portfolios.each do |portfolio| %>
+            <tr>
+                <td><%= portfolio.name %></td>
+                <td><%= truncate(simple_format(portfolio.description), escape: false, length: 50) %></td> 
+                <td><%= link_to 'edit', edit_portfolio_path, class: "btn btn-warning" %> <%= link_to 'X', new_portfolio_path, class: "btn btn-danger" %></td>
+             </tr>
+             <% end %>
+        </table>
+    </div>
+</div>

@@ -7,6 +7,15 @@ class PortfoliosController < ApplicationController
         @images = Image.all
     end
     
+    def list
+         @portfolios = Portfolio.includes(:user).where(user: params[:id])
+        if @portfolio = Portfolio.where(:user_id => current_user.id).any?
+            @portfolio = Portfolio.find(params[:id])
+        end
+        @account = Account.find(params[:id])
+        @user = User.find(params[:id])
+    end
+    
     def user_index
         @portfolios = Portfolio.includes(:user).where(user: params[:id])
         if @portfolio = Portfolio.where(:user_id => current_user.id).any?

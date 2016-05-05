@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   get 'userblog/:id' => 'blogs#user_index', as: 'userblog'
   
   get 'userportfolio/:id' => 'portfolios#user_index', as: 'userportfolio'
+  get 'portfoliolist/:id' => 'portfolios#list', as: 'portfoliolist'
 
 end
