@@ -2,6 +2,7 @@ class PortfoliosController < ApplicationController
     before_action :find_portfolio, only: [:edit, :update, :show, :destroy]
     
     def index
+        @users = User.all
         @portfolios = Portfolio.all
         @accounts = Account.all
         @images = Image.all
@@ -37,15 +38,13 @@ class PortfoliosController < ApplicationController
     def new
        @portfolio = Portfolio.new
        @user = current_user
-       @account = current_user.account
     end
     
     def create
         @portfolio = Portfolio.new(portfolio_params)
         @portfolio.user = current_user
-        @account = current_user.account
         if @portfolio.save
-            redirect_to portfolios_path 
+            redirect_to portfoliolist 
         else
          render 'new'
         end
@@ -74,7 +73,7 @@ class PortfoliosController < ApplicationController
     private
     
         def portfolio_params
-            params.require(:portfolio).permit(:name, :description)
+            params.require(:portfolio).permit(:name, :description, :category, :keyword)
         end
         
         def find_portfolio
