@@ -1887,3 +1887,7 @@ h1,h2,h3,h4,h5,h6{
 	background-color: $color-primary-1;
 	color: $color-primary-4;
 }
+
+table {
+    table-layout: auto;
+}
