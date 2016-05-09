@@ -21,8 +21,8 @@
             <tr>
                 <td><%= portfolio.name %></td>
                 <td><%= truncate(simple_format(portfolio.description), escape: false, length: 50) %></td> 
-                <td><%= link_to 'edit', edit_portfolio_path, class: "btn btn-warning" %>
-                <%= link_to 'X', portfolio_path(@portfolio), method: :delete, data: {confirm: "Are you sure?"}, 
+                <td><%= link_to 'edit', edit_portfolio_path(portfolio), class: "btn btn-warning" %>
+                <%= link_to 'X', portfolio_path(portfolio), method: :delete, data: {confirm: "Are you sure?"}, 
                 class: "btn btn-danger" %>
                 </td>
              </tr>

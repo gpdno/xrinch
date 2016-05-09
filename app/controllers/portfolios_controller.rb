@@ -9,9 +9,9 @@ class PortfoliosController < ApplicationController
     end
     
     def list
-         @portfolios = Portfolio.includes(:user).where(user: params[:id])
+        @portfolios = Portfolio.includes(:user).where(user: params[:id])
         if @portfolio = Portfolio.where(:user_id => current_user.id).any?
-            @portfolio = Portfolio.find(params[:id])
+         @portfolio = Portfolio.includes(:user).where(user: params[:id])
         end
         @account = Account.find(params[:id])
         @user = User.find(params[:id])
@@ -31,8 +31,8 @@ class PortfoliosController < ApplicationController
         if @image = Image.where(:user_id => current_user.id).any?
             @image = Image.find(params[:id])
         end
-        @account = Account.find(params[:id])
-        @user = User.find(params[:id])
+        @user = User.includes(:portfolio).where(portfolio_id: params[:id])
+        @account = Account.includes(:user).where(user: params[:id])
     end
     
     def new
