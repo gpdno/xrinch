@@ -1,10 +1,13 @@
 <!-- begin:content -->
 <div id="content">
-
+    <div class="container">
     <div class="row">
         <div class="panel panel-info">
             <div class="panel-heading panel-text">
                 <h2><%= current_user.account.first_name %> <%= current_user.account.last_name %></h2>
+                <% if current_user %>
+                    <%= link_to 'New Portfolio', new_portfolio_path, class: "btn btn-primary" %>
+                <% end %>
             </div>
         </div>
     </div>
@@ -14,5 +17,5 @@
             <%= render 'container' %>
         </div>
     </div>
-    
+    </div>
 </div>

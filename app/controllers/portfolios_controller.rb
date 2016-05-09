@@ -19,9 +19,9 @@ class PortfoliosController < ApplicationController
     
     def user_index
         @portfolios = Portfolio.includes(:user).where(user: params[:id])
-        if @portfolio = Portfolio.where(:user_id => current_user.id).any?
-            @portfolio = Portfolio.find(params[:id])
-        end
+#        if @portfolio = Portfolio.where(:user_id => current_user.id).any?
+#            @portfolio = Portfolio.find(params[:id])
+#        end
         @account = Account.find(params[:id])
         @user = User.find(params[:id])
     end
@@ -44,7 +44,7 @@ class PortfoliosController < ApplicationController
         @portfolio = Portfolio.new(portfolio_params)
         @portfolio.user = current_user
         if @portfolio.save
-            redirect_to portfoliolist 
+            redirect_to portfoliolist_path(current_user)
         else
          render 'new'
         end
